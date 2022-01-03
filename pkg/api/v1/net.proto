@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package v1;
+option go_package = "github.com/shashi-rai/net-tools/pkg/api/v1";
+import "google/protobuf/timestamp.proto";
+
+service NetService {
+    rpc GetStatus(NetRequest) returns (NetReply) {}
+}
+
+message NetRequest {
+    string name = 1;
+}
+
+message NetReply {
+    string message = 1;
+}
